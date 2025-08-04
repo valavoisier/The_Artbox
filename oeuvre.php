@@ -1,8 +1,9 @@
 <?php
     require 'header.php';
-    require 'oeuvres.php';
+    require 'bdd.php';
 
-   
+    $bdd = connexion();
+    $oeuvres = $bdd->query("SELECT * FROM oeuvres");
 
     // Si l'URL ne contient pas d'id, on redirige sur la page d'accueil
     if(empty($_GET['id'])) {
