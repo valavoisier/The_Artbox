@@ -105,6 +105,5 @@ $oeuvres = [
         'description' => 'Curabitur dui odio, porta vel tempor sed, consectetur vitae mi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Orci varius natoque penatibus nec.',
         'artiste' => 'Adelheid Von Schreiber',
         'image' => 'img/steve-johnson-3.png' // peut être modifié par une URL comme http://localhost/...
-    ],
-
+    ]
 ];
