@@ -1,6 +1,12 @@
-<?php require 'header.php'; ?>
-
+<?php 
+session_start();
+require 'header.php'; 
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
+?>
 <form action="traitement.php" method="POST">
+    <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?>">
     <div class="champ-formulaire">
         <label for="titre">Titre de l'œuvre</label>
         <input type="text" name="titre" id="titre" required placeholder="Saisissez le titre de l'œuvre">

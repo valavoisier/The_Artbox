@@ -10,6 +10,7 @@
     // Si l'URL ne contient pas d'id, on redirige sur la page d'accueil
     if(empty($_GET['id'])) {
         header('Location: index.php');
+        exit;
     }
 
     // Si aucune oeuvre trouvé, on redirige vers la page d'accueil
@@ -20,13 +21,13 @@
 
 <article id="detail-oeuvre">
     <div id="img-oeuvre">
-        <img src="<?= htmlspecialchars($oeuvre['image']) ?>" alt="<?= htmlspecialchars($oeuvre['titre']) ?>">
+        <img src="<?= $oeuvre['image'] ?>" alt="<?= $oeuvre['titre'] ?>">
     </div>
     <div id="contenu-oeuvre">
-        <h1><?= htmlspecialchars($oeuvre['titre']) ?></h1>
-        <p class="description"><?= htmlspecialchars($oeuvre['artiste']) ?></p>
+        <h1><?= $oeuvre['titre'] ?></h1>
+        <p class="description"><?= $oeuvre['artiste'] ?></p>
         <p class="description-complete">
-             <?= htmlspecialchars($oeuvre['description']) ?>
+             <?= $oeuvre['description'] ?>
         </p>
     </div>
 </article>
